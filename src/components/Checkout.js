@@ -49,50 +49,50 @@ const Checkout=({subtotal})=> {
       let checkdealer1;
       let checkdealer2;
       let checkdealer3;
-      for (let i=0;i<sizeofcart;i++)
-      {
+      // for (let i=0;i<sizeofcart;i++)
+      // {
        
-        // console.log(cartItems[2].country)
-        if (cartItems[i].country==='manoj')
-        {
-          checkdealer1='manoj';
-          arrName1[i]=cartItems[i].name+" ";
-          arrQuantity1[i]=cartItems[i].quantity+" ";
-          totalprice1=totalprice1+cartItems[i].price;
-        }
-        if (cartItems[i].country==='nilesh')
-        {
-          checkdealer2='nilesh';
-          arrName2[i]=cartItems[i].name+" "
-          arrQuantity2[i]=cartItems[i].quantity+" "
-          totalprice2=totalprice2+cartItems[i].price;
-        }
-        if (cartItems[i].country==='amir')
-        {
-          checkdealer3='amir';
-          arrName3[i]=cartItems[i].name+" ";
-          arrQuantity3[i]=cartItems[i].quantity+" ";
-          totalprice3=totalprice3+cartItems[i].price;
-        }
-        //if else condition
-      }
-      if (checkdealer1==='manoj')
-      {
-        const datauser={
-          "text":`--------------------------------------------------->NEW\n  STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n  Name of Items: ${arrName1}\n Quantity: ${arrQuantity1 }\n Total Prices: ${totalprice1 }\n`
-        }
-        let  res =await axios.post(webHooKURL,JSON.stringify(datauser),{
-          withCredentials:false
-        })
-      }
-      if (checkdealer2=='nilesh'){
-        const datauser={
-          "text":`--------------------------------------------------->NEW\n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName2}\n Quantity: ${arrQuantity2 }\n Total Prices: ${totalprice2 }`
-        }
-        let  res =await axios.post(webHooKURL1,JSON.stringify(datauser),{
-          withCredentials:false
-        })
-      }
+      //   // console.log(cartItems[2].country)
+      //   if (cartItems[i].country==='manoj')
+      //   {
+      //     checkdealer1='manoj';
+      //     arrName1[i]=cartItems[i].name+" ";
+      //     arrQuantity1[i]=cartItems[i].quantity+" ";
+      //     totalprice1=totalprice1+cartItems[i].price;
+      //   }
+      //   if (cartItems[i].country==='nilesh')
+      //   {
+      //     checkdealer2='nilesh';
+      //     arrName2[i]=cartItems[i].name+" "
+      //     arrQuantity2[i]=cartItems[i].quantity+" "
+      //     totalprice2=totalprice2+cartItems[i].price;
+      //   }
+      //   if (cartItems[i].country==='amir')
+      //   {
+      //     checkdealer3='amir';
+      //     arrName3[i]=cartItems[i].name+" ";
+      //     arrQuantity3[i]=cartItems[i].quantity+" ";
+      //     totalprice3=totalprice3+cartItems[i].price;
+      //   }
+      //   //if else condition
+      // }
+      // if (checkdealer1==='manoj')
+      // {
+      //   const datauser={
+      //     "text":`--------------------------------------------------->NEW\n  STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n  Name of Items: ${arrName1}\n Quantity: ${arrQuantity1 }\n Total Prices: ${totalprice1 }\n`
+      //   }
+      //   let  res =await axios.post(webHooKURL,JSON.stringify(datauser),{
+      //     withCredentials:false
+      //   })
+      // }
+      // if (checkdealer2=='nilesh'){
+      //   const datauser={
+      //     "text":`--------------------------------------------------->NEW\n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName2}\n Quantity: ${arrQuantity2 }\n Total Prices: ${totalprice2 }`
+      //   }
+      //   let  res =await axios.post(webHooKURL1,JSON.stringify(datauser),{
+      //     withCredentials:false
+      //   })
+      // }
       // if (checkdealer2=='amir')
       // {
       //   const datauser={
