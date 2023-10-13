@@ -130,7 +130,7 @@ const Checkout=({subtotal})=> {
       // .then((response)=>response.json())
       // .then((data)=>console.log(data))
       // console.log(item,subtotal);
-      dispatch(placeOrder(item,subtotal));
+      dispatch(placeOrder(item,1000));
       window.location.href='/'
     };
   return (
