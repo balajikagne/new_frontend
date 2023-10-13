@@ -26,7 +26,7 @@ const Checkout=({subtotal})=> {
     const allordersState=useSelector(state=>state.allOrdersReducer)
   const {loading,error,orders}=allordersState
   
-    const submitform = async(e) => {
+    const submitform = async (e) => {
       e.preventDefault();
       const webHooKURL='https://hooks.slack.com/services/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'
       const webHooKURL1='https://hooks.slack.com/services/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'
@@ -93,16 +93,16 @@ const Checkout=({subtotal})=> {
           withCredentials:false
         })
       }
-      if (checkdealer2=='amir')
-      {
-        const datauser={
-          "text":`--------------------------------------------------->NEW\n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName3}\n Quantity: ${arrQuantity3}\n Total Prices: ${totalprice3 }`
-        }
-        let  res =await axios.post(webHooKURL2,JSON.stringify(datauser),{
-          withCredentials:false
-        })
-      }
-      console.log(e);
+      // if (checkdealer2=='amir')
+      // {
+      //   const datauser={
+      //     "text":`--------------------------------------------------->NEW\n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName3}\n Quantity: ${arrQuantity3}\n Total Prices: ${totalprice3 }`
+      //   }
+      //   let  res =await axios.post(webHooKURL2,JSON.stringify(datauser),{
+      //     withCredentials:false
+      //   })
+      // }
+      // console.log(e);
       const item = {
         shippingAddress,
         city,
