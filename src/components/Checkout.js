@@ -154,7 +154,7 @@ const Checkout=({subtotal})=> {
       // .then((data)=>console.log(data))
       // console.log(item,subtotal);
       dispatch(placeOrder(item,subtotal));
-      // window.location.href='/'
+      window.location.href='/'
     };
   return (
       <div>
