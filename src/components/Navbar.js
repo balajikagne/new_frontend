@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../actions/UserActions";
 import { NavLink } from "react-router-dom";
@@ -12,10 +12,17 @@ export default function Navbar() {
     <div>
     <div style={{marginTop:'100px'}}>
       <nav className="navbar navbar-expand-lg fixed-top shadow-lg p-3 mb-5 bg-white rounded">
-        <a className="navbar-brand" href="/" >
+      <a className="navbar-brand" href="/home" >
           <img src="logo1.png" height={"40px"} width={"40px"} style={{marginBottom:'5px',marginRight:'10px'}}></img>
           <b className="testygoicon">TestyGo</b>
         </a>
+      <div className="cartsitems">
+     <li className="cartsitems" >
+              <a className="nav-link" href="/cart" style={{fontSize:'20px'}}>
+              <i class="fa-solid fa-cart-shopping" style={{fontSize:'20px'}}></i> {cartstate.cartItems.length}
+              </a>
+        </li>
+     </div>
         <button
           className="navbar-toggler"
           type="button"
@@ -64,19 +71,14 @@ export default function Navbar() {
               </div>
             ) : (
               <li className="nav-item">
-                <a className="nav-link" href="/login">
+                <a className="nav-link" href="/">
                   Login <span className="sr-only">(current)</span>
                 </a>
               </li>
             )}
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <a className="nav-link" href="/home">
                 Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/cart">
-                Cart {cartstate.cartItems.length}
               </a>
             </li>
             <li className="nav-item">
@@ -92,6 +94,7 @@ export default function Navbar() {
           </ul>
         </div>
       </nav>
+     
     </div>
     </div>
   );
