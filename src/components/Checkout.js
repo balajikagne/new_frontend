@@ -22,6 +22,7 @@ const Checkout=({subtotal})=> {
   const [city, setcity] = useState("");
   const [pincode, setpincode] = useState("");
   const [mobNumber, setmobNumber] = useState("");
+    const [time,settime]=useState(new Date())
     const dispatch=useDispatch();
     const allordersState=useSelector(state=>state.allOrdersReducer)
   const {loading,error,orders}=allordersState
