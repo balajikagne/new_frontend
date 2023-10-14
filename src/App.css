@@ -25,6 +25,7 @@
 }
 
 
+
 .App-link {
   color: #f6f8f9;
 }
@@ -94,4 +95,13 @@ li{
 .logop{
   margin-top: 10px;
 }
+@media (max-width:500px) {
+  .cartsitems{
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    margin-right: -10px;
+  }
+}
+
 
