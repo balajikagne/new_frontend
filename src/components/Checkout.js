@@ -28,9 +28,15 @@ const Checkout=({subtotal})=> {
   
     async function submitform(e){
       e.preventDefault();
-      const webHooKURL='https://hooks.slack.com/services/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'
-      const webHooKURL1='https://hooks.slack.com/services/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'
-      const webHooKURL2='https://hooks.slack.com/services/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'
+      const item = {
+        shippingAddress,
+        city,
+        pincode,
+        mobNumber
+      };
+      const webHooKURL='https://discord.com/api/webhooks/1162616587375878164/pPnOFhZsMgBMkdejACWU2AzZQaWN0oWAXbaIzPNuhwrLv-bZHoqz83X-eS_BeYc-26RA'
+      const webHooKURL1='https://discord.com/api/webhooks/1162626491876659230/lZAE29lXCkeGLqXPMfz9BUSgrWfNNxpRQyN853xttk87Won3Qd_zcfrwoKUu2rrEKBaP'
+      const webHooKURL2='https://discord.com/api/webhooks/1162626500021985391/2R6fX-NYPTndUKh985Fbd4YonIWPTq0v8OlcrmxbZL-GEg4ds9O8Ga1lOUh4S1Xsyxcd'
      
       // var quantityname=cartItems.map((item)=>item.quantity+" ")
       // var itemname=cartItems.map((item)=>item.name+" ")
@@ -78,37 +84,53 @@ const Checkout=({subtotal})=> {
       }
       if (checkdealer1==='manoj')
       {
-        const datauser={
-          "text":`--------------------------------------------------->NEW\n  STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n  Name of Items: ${arrName1}\n Quantity: ${arrQuantity1 }\n Total Prices: ${totalprice1 }\n`
+        try{
+          const datauser={
+            content :`--------------------------------------------------->NEW\n TIME :${time} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName1}\n Quantity: ${arrQuantity1}\n Total Prices: ${totalprice1}`,
+            tts:false,
+            color:'white',
+          }
+          
+          let  res =await axios.post(webHooKURL,datauser)
         }
-        let  res =await axios.post(webHooKURL,JSON.stringify(datauser),{
-          withCredentials:false
-        })
+        catch(error)
+        {
+          console.log(error)
+        }
       }
       if (checkdealer2=='nilesh'){
-        const datauser={
-          "text":`--------------------------------------------------->NEW\n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName2}\n Quantity: ${arrQuantity2 }\n Total Prices: ${totalprice2 }`
+        try{
+          const datauser={
+            content :`--------------------------------------------------->NEW\n TIME :${time} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName2}\n Quantity: ${arrQuantity2}\n Total Prices: ${totalprice2}`,
+            tts:false,
+            color:'white',
+          }
+       
+          let  res =await axios.post(webHooKURL1,datauser)
         }
-        let  res =await axios.post(webHooKURL1,JSON.stringify(datauser),{
-          withCredentials:false
-        })
+        catch(error)
+        {
+          console.log(error)
+        }
       }
       if (checkdealer2=='amir')
       {
-        const datauser={
-          "text":`--------------------------------------------------->NEW\n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName3}\n Quantity: ${arrQuantity3}\n Total Prices: ${totalprice3 }`
+        try{
+          const datauser={
+            content :`--------------------------------------------------->NEW\n TIME :${time} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName3}\n Quantity: ${arrQuantity3}\n Total Prices: ${totalprice3}`,
+            tts:false,
+            color:'white',
+          }
+         
+          let  res =await axios.post(webHooKURL2,datauser)
         }
-        let  res =await axios.post(webHooKURL2,JSON.stringify(datauser),{
-          withCredentials:false
-        })
+        catch(error)
+        {
+          console.log(error)
+        }
       }
-      // console.log(e);
-      const item = {
-        shippingAddress,
-        city,
-        pincode,
-        mobNumber
-      };
+     
+     
       // fetch('https://sheetdb.io/api/v1/sa7ojrpi5otim',{
       //   method:'POST',
       //   headers:{
@@ -130,9 +152,8 @@ const Checkout=({subtotal})=> {
       // .then((response)=>response.json())
       // .then((data)=>console.log(data))
       // console.log(item,subtotal);
+      dispatch(placeOrder(item,subtotal));
       window.location.href='/'
-      // dispatch(placeOrder(item,1000));
-      
     };
   return (
       <div>
