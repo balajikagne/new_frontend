@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import { useSelector,dispatch, useDispatch } from "react-redux";
 import { addToCart } from "../actions/cartActions";
 import { deleteFromCart } from "../actions/cartActions";
@@ -11,6 +11,11 @@ export default function CartScreen() {
     var subtotal=cartItems.reduce((x,item)=>x+item.price,0)
     const dispatch=useDispatch()
     // console.log(cartItems)
+    useEffect(() => {
+      if (localStorage.getItem("currentUser") === null) {
+        window.location.href = "/";
+      }
+    }, []);
 return (
     <div>
       <div className='row justity-content-center'>
@@ -44,3 +49,4 @@ return (
     </div>
   )
 }
+
