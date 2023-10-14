@@ -35,10 +35,9 @@ const Checkout=({subtotal})=> {
         pincode,
         mobNumber
       };
-      const webHooKURL='https://discord.com/api/webhooks/1162616587375878164/pPnOFhZsMgBMkdejACWU2AzZQaWN0oWAXbaIzPNuhwrLv-bZHoqz83X-eS_BeYc-26RA'
-      const webHooKURL1='https://discord.com/api/webhooks/1162626491876659230/lZAE29lXCkeGLqXPMfz9BUSgrWfNNxpRQyN853xttk87Won3Qd_zcfrwoKUu2rrEKBaP'
+      const webHooKURL='https://discord.com/api/webhooks/1162687599907962970/z6lUM60fJ840z3LkYrCEkeSdqPuDyHj9M01jerNCUxf9Oxx0wzrgSDAtLtH84aRTfYN1'
+      const webHooKURL1='https://discord.com/api/webhooks/1162616587375878164/pPnOFhZsMgBMkdejACWU2AzZQaWN0oWAXbaIzPNuhwrLv-bZHoqz83X-eS_BeYc-26RA'
       const webHooKURL2='https://discord.com/api/webhooks/1162626500021985391/2R6fX-NYPTndUKh985Fbd4YonIWPTq0v8OlcrmxbZL-GEg4ds9O8Ga1lOUh4S1Xsyxcd'
-     
       // var quantityname=cartItems.map((item)=>item.quantity+" ")
       // var itemname=cartItems.map((item)=>item.name+" ")
       var sizeofcart=cartItems.length;
