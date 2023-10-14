@@ -18,6 +18,7 @@ import EditeItem from './Admin/EditeItem';
 import aboutUs from './screens/aboutUs';
 import OrderScreen from './screens/OrderScreen';
 import Checkout from './components/Checkout';
+import Homescreen from './screens/Homescreen';
 function App() {
   return (
     <div className='App'>
@@ -29,10 +30,10 @@ function App() {
     <Route path='/admin/addnewitem' Component={AddNewItem}></Route>
     <Route path='/admin/itemlist' Component={Itemlist}></Route>
       <Route path='/aboutus' Component={aboutUs}></Route>
-    <Route path='/' exact Component={Menu}></Route>
+    <Route path='/' exact Component={LoginScreen}></Route>
     <Route path='/cart' exact Component={cartScreen}></Route>
     <Route path='/register' exact Component={RegisterScreen}></Route>
-    <Route path='/login' exact Component={LoginScreen}></Route>
+    <Route path='/home' exact Component={Homescreen}></Route>
     <Route path='/orders' exact Component={OrderScreen}></Route>
     <Route path='/checkout' Component={Checkout}></Route>
     <Route path='/admin' Component={AdminScreen}></Route>
@@ -41,5 +42,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
