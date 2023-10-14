@@ -7,7 +7,7 @@ import Loading from "../components/Loading";
 import Error from "../components/Error";
 export default function RegisterScreen() {
   const [name, setname] = useState("");
-  const [email, setemail] = useState("");
+  const [mobNumber, setmobNumber] = useState("");
   const [password, setpassword] = useState("");
   const [cpassword,setcpassword]=useState("")
   const registerstate=useSelector(state=>state.registerUserReducer)
@@ -22,7 +22,7 @@ export default function RegisterScreen() {
     {
         const user={
             name,
-            email,
+            mobNumber,
             password
         }
         // console.log(user)
@@ -35,7 +35,7 @@ export default function RegisterScreen() {
         <div className="col-md-5 mt-5 text-left">
           {loading && (<Loading/>)}
           {success && (<Success success='User Register Successfully'/>)}
-          {error && (<Error error="Email already register"/>)}
+          {error && (<Error error="mobNumber already register"/>)}
           <h3 className="text-center m-2" style={{fontSize:'35px'}}>
             Register
           </h3>
@@ -54,9 +54,9 @@ export default function RegisterScreen() {
               type="text"
               placeholder="Mob Number"
               className="form-control"
-              value={email}
+              value={mobNumber}
               onChange={(e)=>{
-                setemail(e.target.value)
+                setmobNumber(e.target.value)
               }}
               required
             ></input>
