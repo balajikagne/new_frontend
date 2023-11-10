@@ -7,13 +7,13 @@ import Error from '../components/Error';
 
 export default function LoginScreen() {
 
-  const [mobNumber, setmobNumber] = useState("");
+  const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const loginstate=useSelector(state=>state.loginUserReducer)
   const {loading,error}=loginstate;
   const dispatch=useDispatch()
   function login(){
-    const user={mobNumber,password}
+    const user={email,password}
     dispatch(loginUser(user))
   }
   
@@ -31,9 +31,9 @@ export default function LoginScreen() {
             type="text"
             placeholder="Mob Number"
             className="form-control"
-            value={mobNumber}
+            value={email}
             onChange={(e)=>{
-              setmobNumber(e.target.value)
+              setemail(e.target.value)
             }}
             required
           ></input>
