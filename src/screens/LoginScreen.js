@@ -12,17 +12,11 @@ export default function LoginScreen() {
   const loginstate=useSelector(state=>state.loginUserReducer)
   const {loading,error}=loginstate;
   const dispatch=useDispatch()
-  
-  useEffect(()=>{
-    if (localStorage.getItem('currentUser'))
-    {
-      window.location.href='/'
-    }
-  })
   function login(){
     const user={mobNumber,password}
     dispatch(loginUser(user))
   }
+  
   return (
     <div>
     <div className="row justify-content-center mt-5 ">
