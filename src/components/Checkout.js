@@ -13,7 +13,7 @@ import Error from "../components/Error";
 import Success from "../components/Success";
 import { loginUserReducer } from "../Reducers/UserReducer";
 import  axios  from "axios";
-
+import Lottie from 'react-lottie';
 const Checkout=({subtotal})=> {
   const cartstate=useSelector((state)=>state.addtoCartReducer)
     const cartItems=cartstate.cartItems
@@ -158,9 +158,18 @@ const Checkout=({subtotal})=> {
       alert("Your Order Will Be Delivered within 35 minutes")
       // window.location.href='/home'
     };
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: dboy,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
   return (
       <div>
       <h4 className="bg-dark text-light p-2">Order Now</h4>
+    <Lottie options={defaultOptions} height={200} width={200} />
       <Form>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridnae">
